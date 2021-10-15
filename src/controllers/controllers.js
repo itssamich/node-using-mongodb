@@ -1,10 +1,10 @@
 const mongoose = require('mongoose');
-import ProductSchema from '../models/models.js'
+const ProductSchema =require('../models/models.js')
 
-Product = mongoose.model('Product', ProductSchema);
+const Product = mongoose.model('Product', ProductSchema);
 
 export const addnewProduct = (req, res) => {    
-    newProduct = new Product(req.body);
+    var newProduct = new Product(req.body);
 
     newProduct.save((err, Product) => {
         if(err) {
